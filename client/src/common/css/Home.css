@@ -1,0 +1,136 @@
+/* Aitools heading */
+.stylish-heading {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #e9e3d4; /* Bright yellow color */
+
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); /* Adding some depth */
+    transition: all 0.3s ease;
+  }
+  /* login button */
+  
+  .stylish-heading:hover {
+    color: #ff9800; /* A warmer yellow when hovering */
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+    transform: translateY(-5px); /* Slight lift effect on hover */
+  }
+  
+  .stylish-heading:active {
+    color: #ff5722; /* Orange color when clicked */
+    transform: translateY(2px); /* Slight press effect */
+  }
+  
+.stylish-button {
+    position: relative;
+    padding: 10px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 50px;
+    border: 2px solid #ffc107;
+    background-color: transparent;
+    color: #ffc107;
+    text-transform: uppercase;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 10px rgba(255, 193, 7, 0.6);
+  }
+  
+  .stylish-button:hover {
+    background-color: #ffc107;
+    color: #212529;
+    box-shadow: 0 0 20px rgba(255, 193, 7, 0.8);
+    transform: scale(1.1);
+  }
+  
+  .stylish-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #ffc107, 0 0 10px rgba(255, 193, 7, 0.8);
+  }
+  
+  .full-screen {
+    position: absolute;
+     top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Dark background color */
+  }
+ .set{
+  background-color: rgba(219, 222, 225, 0.9);
+    opacity: 0.8;
+    background-image: url('https://imageio.forbes.com/specials-images/imageserve/6343bdc93a68ef0014de06ad/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds');
+    background-size: cover;
+ }
+  /* Main Section Styling */
+.stylish-heading {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #166ced; /* Bootstrap primary color */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .stylish-heading:hover {
+    color: #fcfcf8; /* Darker shade for hover effect */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .stylish-text {
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.6;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+  }
+  
+  .stylish-text:hover {
+    opacity: 1;
+  }
+  
+  /* Footer Section Styling */
+  
+  
+  .stylish-btn {
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  .stylish-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+  .btn-light {
+    background-color: #f8f9fa;
+    color: #212529;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    height: 50px;
+  }
+  footer{
+
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    height: 100px;
+    background-color: dark;
+  }
+  .bt1{
+    border-radius: 10px;
+    padding-left: 4px;
+    margin-right: 10px;
+    max-width: 120px;
+    max-height: 42px;
+  }
+  

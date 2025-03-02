@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.katham{
+  max-height: 50px;
+}
+
+/* src/index.css */
+
+.userSection {
+  background-color: transparent;  /* Prevents unwanted background */
+}
+.full-screen {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  background-color: #201d1d;
+}
+.header::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.outlet-content {
+  flex: 1;
+  text-align: center;
+ background-color: rgb(17, 16, 16); /* Set the background to white */
+   /* Optional: Set the text color to dark for contrast */
+}
+
+header nav {
+  display: flex;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #282c34;
+  color: white;
+  /* push it to the bottom */
+  /* push it to the bottom */
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  max-height: 40px;
+  /* push it to the bottom */
+}
