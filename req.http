@@ -1,0 +1,14 @@
+GET http://localhost:5000/api/aitools-by-cost
+
+####################################
+POST http://localhost:3000/author/createAuthor
+content-type: application/json
+
+{
+  "role": "author",
+  "firstname": "John",
+  "lastname": "Doe",
+  "email": "johndoe@example.com"
+}
+
+

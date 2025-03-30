@@ -1,0 +1,160 @@
+/* About Section Styles */
+.about-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .about-container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-container {
+    padding: 0 2rem;
+  }
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .about-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.about-content {
+  padding-right: 0;
+}
+
+@media (min-width: 1024px) {
+  .about-content {
+    padding-right: 3rem;
+  }
+}
+
+.about-title {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+.about-description {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: #d1d5db;
+  margin-bottom: 2rem;
+}
+
+.features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.feature-icon-container {
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: #3b82f6;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.25rem;
+}
+
+.feature-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #ffffff;
+}
+
+.feature-text {
+  flex: 1;
+}
+
+.feature-title {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.feature-description {
+  color: #9ca3af;
+}
+
+/* Stats Section */
+.stats-container {
+  padding-left: 0;
+}
+
+@media (min-width: 1024px) {
+  .stats-container {
+    padding-left: 3rem;
+  }
+}
+
+.stats-box {
+  background-color: #262626;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.stats-item {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.stats-number {
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 700;
+  color: #3b82f6;
+  margin-bottom: 0.5rem;
+}
+
+.stats-label {
+  color: #d1d5db;
+}
+
+.stats-divider {
+  border-color: #404040;
+  margin: 1.5rem 0;
+}
+
+.contact-button-container {
+  margin-top: 2rem;
+}
+
+.contact-button {
+  display: block;
+  width: 100%;
+  background-color: #3b82f6;
+  color: #ffffff;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: #2563eb;
+}

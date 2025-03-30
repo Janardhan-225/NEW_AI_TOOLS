@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures padding and borders don't affect height/width */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between; /* Ensures logo is on the left and nav links are on the right */
+  align-items: center; /* Centers content vertically */
+  padding: 10px 20px;
+  background-color: transparent;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+
+  top: 0;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.logoLink {
+  color: white;
+  text-decoration: none;
+  white-space: nowrap; /* Prevents the logo text from wrapping into a new line */
+}
+
+.nav {
+  display: flex;
+  align-items: center; /* Vertically center the nav links */
+  gap: 20px; /* Space between the nav links */
+}
+
+.navLink {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.userSection {
+  display: flex;
+  align-items: center;
+}
+
+.loginButton {
+  padding: 8px 16px;
+  background-color: #61dafb;
+  color: #e8e9e9;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 1rem;
+}

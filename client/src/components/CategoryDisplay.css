@@ -1,0 +1,228 @@
+/* Global Settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.he1{
+    border-radius: 20px;
+    border-color: #e9e4e2;
+    border-width: 10px;
+}
+/* Container Styling */
+.new {
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 50px;
+}
+
+/* Animated Gradient Background */
+body1 {
+    background: linear-gradient(-45deg, #e9e4e2, #282224, #b5deed, #7e8785);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    min-height: 100vh;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Header Styling */
+header h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    background: linear-gradient(45deg, #ff6b6b, #ffd93d, #6c5ce7);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 30px rgba(255, 107, 107, 0.4);
+    animation: text-glow 2s ease-in-out infinite alternate;
+    margin-bottom: 1.5rem;
+}
+
+@keyframes text-glow {
+    from { text-shadow: 0 0 10px rgba(255, 107, 107, 0.4); }
+    to { text-shadow: 0 0 30px rgba(255, 107, 107, 0.8), 0 0 10px rgba(255, 217, 61, 0.4); }
+}
+
+header p {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+    backdrop-filter: blur(5px);
+}
+
+/* Card Styling */
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 25px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        transparent,
+        #ff6b6b,
+        #ffd93d,
+        #6c5ce7,
+        transparent 30%
+    );
+    animation: rotate-border 4s linear infinite;
+}
+
+@keyframes rotate-border {
+    100% { transform: rotate(360deg); }
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: inherit;
+    border-radius: 18px;
+}
+
+/* Card Header Styling */
+.card-header {
+    position: relative;
+    z-index: 1;
+}
+
+.card-header h2 {
+    font-size: 2.8rem;
+    background: linear-gradient(45deg, #ffd93d, #6c5ce7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Tool Cards */
+.tool-card {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.tool-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.tool-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.tool-card:hover::before {
+    left: 100%;
+}
+
+.tool-card img {
+    width: 70px;
+    height: 70px;
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.tool-card:hover img {
+    transform: rotate(15deg) scale(1.1);
+}
+
+.tool-card h3 {
+    font-size: 1.4rem;
+    background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.category-badge {
+    background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+    color: white;
+    font-weight: 600;
+    padding: 6px 15px;
+    border-radius: 25px;
+    transition: transform 0.3s ease;
+}
+
+.category-badge:hover {
+    transform: translateY(-3px);
+}
+
+.tool-card a {
+    background: linear-gradient(45deg, #6c5ce7, #00cec9);
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.tool-card a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(108, 92, 231, 0.4);
+}
+
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .card-header h2 {
+        font-size: 2rem;
+    }
+    
+    .tool-card {
+        padding: 15px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}

@@ -1,0 +1,14 @@
+GET http://localhost:5000/api/display-aitools
+
+
+###########################
+POST http://localhost:5000/api/rating
+Content-Type: application/json
+
+   {
+  "toolId": "60b8d8bb1e2b2c3a34bb4ccf",  
+  "userId": "60b8d8c71e2b2c3a34bb4cd0",
+  "rating": 5
+  }
+  
+###########################
