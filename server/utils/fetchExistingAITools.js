@@ -27,7 +27,7 @@ const fetchExistingAITools = async () => {
   
   
   try {
-    browser = await puppeteer.launch({
+    const browser = await puppeteer.launch({
       headless: 'new',
       executablePath: getChromiumPath(),  // Use the verification function
       args: [
