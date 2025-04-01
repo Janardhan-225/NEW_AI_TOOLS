@@ -1,27 +1,49 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
-const AITool = require('../models/aitoolsModel'); 
-const getChromiumPath = () => {
-  // Common paths for free tier deployments
-  const possiblePaths = [
-    process.env.CHROME_PATH,
-    'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe',
-    'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',             // Custom installations
-    process.env.PUPPETEER_EXECUTABLE_PATH,
-    puppeteer.executablePath() // Last fallback to Puppeteer's bundled Chromium
-  ].filter(Boolean);
+const AITool = require('../models/aitoolsModel');
 
-  for (const path of possiblePaths) {
-    try {
-      if (fs.existsSync(path)) {
-        console.log('Using browser at:', path);
-        return path;
-      }
-    } catch (err) {
-      console.warn('Path check failed for:', path);
-    }
+const getBrowserPath = () => {
+  // 1. Try environment variables first
+  if (process.env.PUPPETEER_EXECUTABLE_PATH && fs.existsSync(process.env.PUPPETEER_EXECUTABLE_PATH)) {
+    return process.env.PUPPETEER_EXECUTABLE_PATH;
   }
-  throw new Error(`Browser not found! Tried:\n${possiblePaths.join('\n')}`);
+
+  // 2. Try Puppeteer's bundled Chromium
+  try {
+    const puppeteerPath = puppeteer.executablePath();
+    if (fs.existsSync(puppeteerPath)) return puppeteerPath;
+  } catch (error) {
+    console.warn('Puppeteer bundled Chromium not found');
+  }
+
+  // 3. Platform-specific fallbacks
+  const platformPaths = {
+    win32: [
+      process.env.CHROME_PATH,
+      'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+      'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe'
+    ],
+    linux: [
+      '/usr/bin/chromium-browser',
+      '/usr/bin/chromium',
+      '/snap/bin/chromium'
+    ],
+    darwin: [
+      '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+    ]
+  };
+
+  const paths = platformPaths[process.platform] || [];
+  for (const path of paths) {
+    if (fs.existsSync(path)) return path;
+  }
+
+  throw new Error(`
+    Browser not found! Solutions:
+    1. Install Chrome: https://www.google.com/chrome/
+    2. Set PUPPETEER_EXECUTABLE_PATH to your Chrome path
+    3. Run: npm uninstall puppeteer && npm install puppeteer
+  `);
 };
 const fetchExistingAITools = async () => {
   
@@ -29,7 +51,7 @@ const fetchExistingAITools = async () => {
   try {
     const browser = await puppeteer.launch({
       headless: 'new',
-      executablePath: getChromiumPath(),  // Use the verification function
+      executablePath: getBrowserPath(),  // Use the verification function
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox',
