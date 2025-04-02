@@ -63,7 +63,7 @@ const fetchExistingAITools = async () => {
     await page.goto('https://www.futurepedia.io/', { waitUntil: 'domcontentloaded' });
 
     // Wait for the tools section to load
-    await page.waitForSelector('.flex.flex-col.bg-card.text-card-foreground', { timeout: 10000 });
+    await page.waitForSelector('.flex.flex-col.bg-card.text-card-foreground', { timeout: 30000 });
 
     // Extract the data
     const tools = await page.evaluate(() => {
