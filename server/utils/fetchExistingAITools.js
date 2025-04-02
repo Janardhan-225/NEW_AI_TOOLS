@@ -51,12 +51,13 @@ const fetchExistingAITools = async () => {
     const browser = await puppeteer.launch({
       headless: 'new',
       executablePath: getBrowserPath(), // Use the verification function
-      args: [
-        '--no-sandbox',
-        '--disable-setuid-sandbox',
-        '--disable-dev-shm-usage'
-      ]
-    });
+     args: [
+    '--no-sandbox',
+    '--disable-setuid-sandbox',
+    '--disable-dev-shm-usage'
+  ],
+  timeout: 60000  // Increase to 60 seconds (or set to 0 for no timeout)
+});
 
     const page = await browser.newPage();
     await page.goto('https://www.futurepedia.io/', { waitUntil: 'domcontentloaded' });
