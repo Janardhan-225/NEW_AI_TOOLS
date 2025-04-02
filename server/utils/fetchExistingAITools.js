@@ -45,13 +45,12 @@ const getBrowserPath = () => {
     3. Run: npm uninstall puppeteer && npm install puppeteer
   `);
 };
+
 const fetchExistingAITools = async () => {
-  
-  
   try {
     const browser = await puppeteer.launch({
       headless: 'new',
-      executablePath: getBrowserPath(),  // Use the verification function
+      executablePath: getBrowserPath(), // Use the verification function
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox',
@@ -93,20 +92,21 @@ const fetchExistingAITools = async () => {
 
     await browser.close();
 
-    // Save new tools to MongoDB
-    const toolsToSave = [];
-    for (const tool of tools) {
-      const existingTool = await AITool.findOne({ name: tool.name });
-      if (!existingTool) {
-        toolsToSave.push(tool);
-      } else {
-        console.log('Tool already exists in the database:', tool.name);
-      }
-    }
+    // Get list of tool names from scraped data
+    const toolNames = tools.map(tool => tool.name);
+
+    // Fetch all existing tools at once
+    const existingTools = await AITool.find({ name: { $in: toolNames } });
+    const existingToolNames = new Set(existingTools.map(tool => tool.name));
+
+    // Filter out tools that already exist
+    const toolsToSave = tools.filter(tool => !existingToolNames.has(tool.name));
 
     if (toolsToSave.length > 0) {
       await AITool.insertMany(toolsToSave);
       console.log('Saved new tools:', toolsToSave.map(tool => tool.name));
+    } else {
+      console.log('No new tools to save.');
     }
 
   } catch (error) {
