@@ -38,7 +38,7 @@ const CategoryDisplay = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/aitools-by-cost');
+        const response = await axios.get("https://ai-tools-iczi.onrender.com/api/aitools-by-cost");
         setCostGroups(response.data.data.costGroups);
         setLoading(false);
       } catch (error) {
