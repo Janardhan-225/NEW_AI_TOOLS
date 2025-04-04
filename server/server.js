@@ -8,7 +8,7 @@ require('dotenv').config();
 const cors = require('cors');
 
 app.use(cors({
-  origin: 'http://localhost:5173', // Allow only your frontend origin
+  origin: ["http://localhost:5173", "https://ai-tools-front.onrender.com"],// Allow only your frontend origin
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
   credentials: true // Allow cookies and credentials
 }));
