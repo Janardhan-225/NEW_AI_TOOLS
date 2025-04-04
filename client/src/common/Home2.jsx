@@ -3,7 +3,7 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import AiToolCard from './AiToolCard';
-import './css/home2.css';
+import './css/Home2.css';
 
 function Home2() {
   const [tools, setTools] = useState([]); // Store all tools
