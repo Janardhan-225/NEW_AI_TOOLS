@@ -9,7 +9,7 @@ import Home2 from './common/Home2.jsx';
 import Trending from './context/Trending.jsx';
 import Category from './components/CategoryDisplay.jsx';
 import About from './components/About.jsx';
-import Submit from './context/submit.jsx';
+import Submit from './context/Submit.jsx';
 
 const App = () => {
   return (
