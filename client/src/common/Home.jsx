@@ -1,7 +1,7 @@
 // src/components/HomePage.js
 import React from 'react';
 //import home css
-import './css/home.css';
+import './css/Home.css';
 import { useClerk } from '@clerk/clerk-react';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '@clerk/clerk-react';
