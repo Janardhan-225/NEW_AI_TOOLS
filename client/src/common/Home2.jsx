@@ -14,7 +14,7 @@ function Home2() {
   // Fetch all AI tools from the API
   async function fetchTools() {
     try {
-      let res = await axios.get('http://localhost:5000/api/display-aitools');
+      let res = await axios.get("https://ai-tools-iczi.onrender.com/api/display-aitools");
       if (res.data.success === true) {
         setTools(res.data.data);
         setFilteredTools(res.data.data); // Initially show all tools
